@@ -11,18 +11,18 @@ dns.setServers(["8.8.8.8", "8.8.4.4", "1.1.1.1"])
 
 const app = express()
 
-app.use(cors())
-app.use(express.json())
-app.use(clerkMiddleware())
+app.use(cors());
+app.use(express.json());
+app.use(clerkMiddleware());
 
 // Connect to MongoDB
-connectDB()
+connectDB();
 
 // Clerk webhook
-app.use("/api/clerk", ClerkWebhooks)
+app.use("/api/clerk", ClerkWebhooks);
 
 app.get("/", (req, res) => {
   res.send("API is working")
 })
 
-export default app
+export default app;
